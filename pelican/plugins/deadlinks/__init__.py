@@ -1,5 +1,1 @@
-# -*- coding: utf8 -*-
-
-from .deadlinks import *
-
-
+from .deadlinks import *  # noqa: F403,PGH004,RUF100

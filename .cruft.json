@@ -1,0 +1,27 @@
+{
+  "template": "https://github.com/getpelican/cookiecutter-pelican-plugin",
+  "commit": "b4b9b4f83b624cfd7728a3f1527d272be28ee916",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "plugin_name": "Dead Links",
+      "repo_name": "deadlinks",
+      "package_name": "deadlinks",
+      "distribution_name": "pelican-deadlinks",
+      "version": "0.0.0",
+      "description": "Pelican plugin to scan links and check their status codes",
+      "authors": "{name = \"Justin Mayer\", email = \"entroP@gmail.com\"}",
+      "keywords": "\"pelican\", \"plugin\", \"link\", \"checker\"",
+      "readme": "README.md",
+      "contributing": "CONTRIBUTING.md",
+      "license": "MIT License|MIT",
+      "repo_url": "https://github.com/pelican-plugins/deadlinks",
+      "dev_status": "5 - Production/Stable",
+      "tests_exist": false,
+      "python_version": ">=3.8.1,<4.0",
+      "pelican_version": ">=4.5",
+      "_template": "https://github.com/getpelican/cookiecutter-pelican-plugin"
+    }
+  },
+  "directory": null
+}

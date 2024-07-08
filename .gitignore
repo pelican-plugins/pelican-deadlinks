@@ -92,3 +92,6 @@ ENV/
 *.swp
 *.orig
 
+# PDM
+.pdm-python
+pdm.lock

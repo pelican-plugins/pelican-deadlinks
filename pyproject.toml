@@ -1,0 +1,104 @@
+[project]
+name = "pelican-deadlinks"
+version = "0.0.0"
+description = "Pelican plugin to scan links and check their status codes"
+authors = [{name = "Justin Mayer", email = "entroP@gmail.com"}]
+license = {text = "MIT"}
+readme = "README.md"
+keywords = ["pelican", "plugin", "link", "checker"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Framework :: Pelican",
+    "Framework :: Pelican :: Plugins",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.8.1,<4.0"
+dependencies = [
+    "pelican>=4.5",
+    "beautifulsoup4>=4.12.3",
+    "requests>=2.32.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/pelican-plugins/deadlinks"
+"Issue Tracker" = "https://github.com/pelican-plugins/deadlinks/issues"
+Funding = "https://donate.getpelican.com/"
+
+[project.optional-dependencies]
+markdown = ["markdown>=3.4"]
+
+[tool.pdm]
+
+[tool.pdm.dev-dependencies]
+lint = [
+    "invoke>=2.2",
+    "ruff>=0.5.0,<0.6.0"
+]
+
+[tool.pdm.build]
+source-includes = [
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+]
+includes = ["pelican/"]
+excludes = ["**/.DS_Store", "**/test_data/**", "tasks.py"]
+
+[tool.autopub]
+project-name = "Dead Links"
+git-username = "botpub"
+git-email = "52496925+botpub@users.noreply.github.com"
+append-github-contributor = true
+
+[tool.ruff.lint]
+select = [
+  "B",   # flake8-bugbear
+  "BLE", # flake8-blind-except
+  "C4",  # flake8-comprehensions
+  "D",   # pydocstyle
+  "E",   # pycodestyle
+  "F",   # pyflakes
+  "I",   # isort
+  "ICN", # flake8-import-conventions
+  "ISC", # flake8-implicit-str-concat
+  "PGH", # pygrep-hooks
+  "PL",  # pylint
+  "RET", # flake8-return
+  "RUF", # ruff-specific rules
+  "SIM", # flake8-simplify
+  "T10", # flake8-debugger
+  "T20", # flake8-print
+  "TID", # flake8-tidy-imports
+  "TRY", # tryceratops
+  "UP",  # pyupgrade
+  "W",   # pycodestyle
+  "YTT", # flake8-2020
+]
+
+ignore = [
+  "D100",    # missing docstring in public module
+  "D104",    # missing docstring in public package
+  "D203",    # blank line before class docstring
+  "D213",    # multi-line docstring summary should start at the second line
+  "ISC001",  # disabled so `ruff format` works without warning
+  "RET507",  # unnecessary `else`/`elif` after `continue` statement
+]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+force-sort-within-sections = true
+known-first-party = ["pelican"]
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
